@@ -11,7 +11,7 @@ export default function ListeningClient() {
       <div className="w-full mb-0">
         <ListeningContent />
       </div>
-      <Footer />
+      <Footer meta={<></>}><></></Footer>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function FullIeltsTestClient() {
       <div className="w-full mb-0">
         <FullIeltsTestContent />
       </div>
-      <Footer />
+      <Footer meta={<></>}><></></Footer>
     </div>
   );
 }

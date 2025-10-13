@@ -11,7 +11,7 @@ export default function ReadingClient() {
       <div className="w-full mb-0">
         <ReadingContent />
       </div>
-      <Footer />
+      <Footer meta={<></>}><></></Footer>
     </div>
   );
 }

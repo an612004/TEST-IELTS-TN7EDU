@@ -11,7 +11,7 @@ export default function ProfileClient() {
       <div className="w-full mb-0">
         <ProfileContent />
       </div>
-      <Footer />
+      <Footer meta={<></>}><></></Footer>
     </div>
   );
 }

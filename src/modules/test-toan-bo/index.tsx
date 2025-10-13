@@ -11,7 +11,7 @@ export default function FullTestClient() {
       <div className="w-full mb-0">
         <FullTestContent />
       </div>
-      <Footer />
+      <Footer meta={<></>}><></></Footer>
     </div>
   );
 }
