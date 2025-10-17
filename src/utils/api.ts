@@ -34,8 +34,9 @@ export const API = {
   SUBMIT_TEST: `${BASE_URL}/ielts-viet/test/submit`,
   UPDATE_SUBMIT_TEST: `${BASE_URL}/ielts-viet/test/submit/`,
 
-  // LOGIN
+  // LOGIN & REGISTER
   LOGIN: `${BASE_URL}/ielts-viet/user/login`,
+  REGISTER: `${BASE_URL}/ielts-viet/user/register`,
   GET_USER_BY_ID: `${BASE_URL}/ielts-viet/user`,
   LOGIN_WITH_GOOGLE: `${BASE_URL}/ielts-viet/auth/login/google`,
 

@@ -192,51 +192,23 @@ export default function AnswerKeyWritingPage() {
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-gray-50">
+    <div className="relative min-h-screen w-full bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 flex items-center justify-between bg-white border-b border-gray-200 px-4 py-2 z-20">
-        <Link
-          href={ROUTES.WRITING_HOME}
-          className="hidden lg:flex items-center w-[10%] py-3"
-        >
-          <Image
-            src={IMAGES.LOGO}
-            alt="DOL DINH LUC"
-            width={1000}
-            height={1000}
-            className="w-full h-full"
-          />
+      <header className="fixed top-0 left-0 right-0 flex items-center justify-between bg-white border-b border-gray-200 px-4 py-2 z-30 shadow-sm">
+        <Link href={ROUTES.WRITING_HOME} className="hidden lg:flex items-center w-[10%] py-3">
+          <Image src={IMAGES.LOGO} alt="DOL DINH LUC" width={80} height={32} className="w-auto h-8" />
         </Link>
-        <div className="text-center">
-          <div className="font-semibold">{data?.name}</div>
-          <div className="text-sm text-gray-600">Writing Test</div>
+        <div className="text-center flex flex-col items-center">
+          <div className="font-bold text-xl text-gray-800">{data?.name}</div>
+          <div className="text-sm text-gray-500 tracking-wide">IELTS Writing Test</div>
         </div>
         <div className="flex items-center gap-2">
-          {/* View Feedback Button */}
-          <button
-            className="ml-2 px-3 py-1 rounded bg-[#FA812F] text-white font-base hover:bg-[#e06d1a] transition"
-            onClick={() => setIsFeedbackOpen(true)}
-          >
-            View Feedback
+          <button className="ml-2 px-4 py-2 rounded-lg bg-[#FA812F] text-white font-semibold shadow hover:bg-[#e06d1a] transition" onClick={() => setIsFeedbackOpen(true)}>
+            Xem nhận xét
           </button>
-          <Link
-            href={ROUTES.WRITING_HOME}
-            className="ml-4"
-            onClick={handleExitClick}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+          <Link href={ROUTES.WRITING_HOME} className="ml-4" onClick={handleExitClick}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </Link>
         </div>
@@ -245,70 +217,30 @@ export default function AnswerKeyWritingPage() {
       {/* Feedback Modal */}
       {isFeedbackOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
-          <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
-            <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-              onClick={() => setIsFeedbackOpen(false)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+          <div className="bg-white rounded-xl shadow-2xl max-w-xl w-full p-8 relative border border-gray-200">
+            <button className="absolute top-2 right-2 text-gray-500 hover:text-gray-700" onClick={() => setIsFeedbackOpen(false)}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <h2 className="text-xl font-bold mb-4">Feedback</h2>
-            {!feedback ||
-            !feedback.writing_feedback ||
-            feedback.writing_feedback.length === 0 ? (
-              <div className="text-gray-600 text-center py-8">
-                This writing has not been feedback. Please come back later.
-              </div>
+            <h2 className="text-2xl font-bold mb-6 text-[#FA812F] flex items-center gap-2">
+              <Grid2x2Check size={24} /> Nhận xét & Điểm số
+            </h2>
+            {!feedback || !feedback.writing_feedback || feedback.writing_feedback.length === 0 ? (
+              <div className="text-gray-600 text-center py-8">Bài viết chưa được chấm điểm. Vui lòng quay lại sau.</div>
             ) : (
               <>
-                <div className="mb-4">
-                  <div className="font-semibold">
-                    Overall Score:{" "}
-                    <span className="text-[#FA812F]">
-                      {Number.isInteger(
-                        getAverageScore(
-                          Number(feedback.writing_feedback[0].score),
-                          Number(feedback.writing_feedback[1].score)
-                        )
-                      )
-                        ? `${getAverageScore(
-                            Number(feedback.writing_feedback[0].score),
-                            Number(feedback.writing_feedback[1].score)
-                          )}.0`
-                        : `${getAverageScore(
-                            Number(feedback.writing_feedback[0].score),
-                            Number(feedback.writing_feedback[1].score)
-                          )}`}
-                    </span>
-                  </div>
+                <div className="mb-6 flex flex-col gap-2">
+                  <div className="font-semibold text-lg">Điểm trung bình: <span className="text-[#FA812F] text-xl font-bold">{getAverageScore(Number(feedback.writing_feedback[0].score), Number(feedback.writing_feedback[1].score))}</span></div>
                 </div>
                 <div className="space-y-4 max-h-72 overflow-y-auto">
                   {feedback.writing_feedback.map((item: any, idx: number) => (
-                    <div key={idx} className="border rounded p-3 bg-gray-50">
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="font-semibold">
-                          Teacher: {item.teacher}
-                        </span>
-                        <span className="font-semibold text-[#FA812F]">
-                          Score: {item.score}
-                        </span>
+                    <div key={idx} className="border rounded-lg p-4 bg-blue-50">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-semibold text-gray-700 flex items-center gap-2"><FileText size={18} /> Giáo viên: {item.teacher}</span>
+                        <span className="font-semibold text-[#FA812F]">Điểm: {item.score}</span>
                       </div>
-                      <div className="text-gray-700 whitespace-pre-line">
-                        {item.feedback}
-                      </div>
+                      <div className="text-gray-800 whitespace-pre-line text-base leading-relaxed">{item.feedback}</div>
                     </div>
                   ))}
                 </div>
@@ -321,68 +253,42 @@ export default function AnswerKeyWritingPage() {
       {/* Main Content */}
       <div className="fixed top-[8%] bottom-[0%] left-0 right-0 grid grid-cols-1 lg:grid-cols-2 w-full overflow-y-auto">
         {/* Writing passage */}
-        <div
-          className={`p-4 overflow-y-auto scroll-bar-style border-r border-gray-200 pt-8 ${
-            switchWriting ? "" : "hidden lg:block"
-          }`}
-        >
+        <div className={`p-6 overflow-y-auto scroll-bar-style border-r border-gray-200 pt-12 ${switchWriting ? "" : "hidden lg:block"}`}>
           {parts.length > 0 && (
             <div>
-              <h1 className="text-2xl font-bold mb-4">
-                Writing Task {selectedPassage}
-              </h1>
+              <h1 className="text-2xl font-bold mb-6 text-[#FA812F]">Task {selectedPassage}</h1>
               {parts[selectedPassage - 1]?.question.map((q, qIdx) => (
-                <div key={q._id || qIdx}>
-                  <h2 className="text-xl font-bold mb-4">
-                    {q.question || q.content}
-                  </h2>
-                  <div
-                    className="mb-4 text-sm lg:text-[17px] font-semibold border-double border-2 border-black p-4 text-justify w-full"
-                    dangerouslySetInnerHTML={{
-                      __html: (q.content || "").replace(/\\/g, ""),
-                    }}
-                  />
+                <div key={q._id || qIdx} className="mb-6">
+                  <h2 className="text-lg font-semibold mb-2 text-gray-800 flex items-center gap-2"><FileText size={20} /> {q.question || q.content}</h2>
+                  <div className="mb-4 text-base font-normal border border-gray-300 rounded-lg p-4 bg-white shadow-sm text-justify w-full" dangerouslySetInnerHTML={{ __html: (q.content || "").replace(/\\/g, "") }} />
                   {q.image && (
-                    <div>
-                      <Image
-                        src={q.image}
-                        alt=""
-                        width={1000}
-                        height={1000}
-                        className="w-full h-full"
-                      />
+                    <div className="mb-2">
+                      <Image src={q.image} alt="" width={600} height={400} className="rounded-lg border object-contain mx-auto" />
                     </div>
                   )}
                 </div>
               ))}
-              <p className="mb-4 text-sm lg:text-[15px]">
-                Write at least {selectedPassage === 1 ? 150 : 250} words.
-              </p>
+              <p className="mb-4 text-sm text-gray-600">Yêu cầu: Viết tối thiểu {selectedPassage === 1 ? 150 : 250} từ.</p>
             </div>
           )}
         </div>
 
         {/* Writing Area */}
-        <div
-          className={`bg-white px-4 pt-8 overflow-y-auto scroll-bar-style ${
-            switchWriting ? "hidden lg:block" : ""
-          }`}
-        >
-          <div className="text-xl font-bold mb-4">Bài làm</div>
+        <div className={`bg-white px-6 pt-12 overflow-y-auto scroll-bar-style ${switchWriting ? "hidden lg:block" : ""}`}>
+          <div className="text-xl font-bold mb-6 text-[#FA812F]">Bài làm của bạn</div>
           <div className="w-full h-full">
-            <textarea
-              id="title"
-              value={
-                response?.result?.[selectedPassage - 1]?.user_answers?.[0]
-                  ?.answer?.[0] || ""
-              }
-              placeholder="Nhập bài viết của bạn"
-              className="w-full h-2/3 lg:h-3/4 p-2 border rounded"
-              disabled
-            ></textarea>
-            <div className="flex justify-between">
-              <div className="text-right">{wordCount} words</div>
-              <div className="text-right">{characterCount}/1000</div>
+            <div className="border border-gray-300 rounded-lg bg-blue-50 p-6 shadow-sm mb-4">
+              <div className="flex flex-col gap-2 mb-2">
+                <span className="font-semibold text-gray-700">Số từ: <span className="text-[#FA812F]">{wordCount}</span></span>
+                <span className="font-semibold text-gray-700">Số ký tự: <span className="text-[#FA812F]">{characterCount}/1000</span></span>
+              </div>
+              <textarea
+                id="title"
+                value={response?.result?.[selectedPassage - 1]?.user_answers?.[0]?.answer?.[0] || ""}
+                placeholder="Bài viết của bạn sẽ hiển thị ở đây"
+                className="w-full h-64 lg:h-80 p-4 border rounded-lg bg-white text-base font-medium text-gray-800 resize-none shadow"
+                disabled
+              ></textarea>
             </div>
           </div>
         </div>

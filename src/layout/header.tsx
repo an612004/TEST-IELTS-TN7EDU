@@ -15,6 +15,7 @@ import {
 import { IMAGES } from "@/utils/images";
 import { usePathname } from "next/navigation";
 import LoginForm from "./login-form";
+import RegisterForm from "./register-form";
 import Cookies from "js-cookie";
 import { ROUTES } from "@/utils/routes";
 import { UserService } from "@/services/user";
@@ -225,7 +226,12 @@ const Header = () => {
                 </Dropdown>
               </div>
             </>
-          ) : null}
+          ) : (
+            <div className="flex items-center gap-4">
+              {/* <LoginForm />
+              <RegisterForm /> */}
+            </div>
+          )}
         </div>
       </div>
       {open && (

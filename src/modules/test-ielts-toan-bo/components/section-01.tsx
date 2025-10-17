@@ -202,9 +202,9 @@ export default function Section01() {
             <Image
               src={IMAGES.THUMBNAIL}
               alt=""
-              width={280}
-              height={180}
-              className="rounded-lg object-cover px-0 h-full w-full"
+              width={100}
+              height={60}
+              className="rounded-lg object-cover px-0 h-20 w-24"
             />
           </div>
           <div className="flex flex-col justify-between items-start">

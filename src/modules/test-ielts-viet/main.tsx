@@ -657,9 +657,9 @@ export default function WritingTestClient() {
             <Image
               src={IMAGES.LOGO}
               alt="IELTS Writing Test"
-              width={150}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={80}
+              height={32}
+              className="h-8 w-auto object-contain"
             />
           </Link>
 

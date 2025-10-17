@@ -120,9 +120,9 @@ const FullTestSection: React.FC = () => {
           <Image
             src={IMAGES.THUMBNAIL}
             alt={test.name}
-            width={280}
-            height={180}
-            className="rounded-lg w-full object-cover border border-gray-200 px-0 h-60 lg:h-40"
+            width={100}
+            height={60}
+            className="rounded-lg w-full object-cover border border-gray-200 px-0 h-20 lg:h-12"
           />
         </div>
         <div className="flex flex-col justify-between h-full">
