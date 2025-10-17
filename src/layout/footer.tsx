@@ -119,7 +119,7 @@ const Footer = (props: IMainProps) => {
             {/* Company Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold gradient-text">IELTS VIET CENTER</span>
+                <span className="text-2xl font-bold gradient-text">TN7 EDU CENTER</span>
               </div>
               <p className="text-gray-400">
                 Trung tâm đào tạo tiếng anh từ cơ bản đến nâng cao. Dẫn dắt bởi
