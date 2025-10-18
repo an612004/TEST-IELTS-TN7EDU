@@ -199,13 +199,15 @@ export default function Section01() {
       <main>
         <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start lg:flex-row mb-4">
           <div className="w-full lg:w-40 h-60 lg:h-28 mr-0 lg:mr-4 mb-5 lg:mb-0 border border-gray-200 rounded-lg">
-            <Image
-              src={IMAGES.THUMBNAIL}
-              alt=""
-              width={100}
-              height={60}
-              className="rounded-lg object-cover px-0 h-20 w-24"
-            />
+            <div className="w-full flex justify-center items-center bg-gradient-to-br from-white to-orange-50 rounded-2xl border-2 border-[#FA812F] shadow-xl p-2" style={{minHeight:'120px'}}>
+              <Image
+                src={IMAGES.THUMBNAIL}
+                alt=""
+                width={320}
+                height={120}
+                className="object-contain h-28 w-full"
+              />
+            </div>
           </div>
           <div className="flex flex-col justify-between items-start">
             <div className="flex flex-col lg:items-start justify-center items-center">

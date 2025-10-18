@@ -4,19 +4,12 @@ import { ROUTES } from "@/utils/routes";
 import ListeningSection from "./components/section-01";
 import SectionFooter from "./components/section-footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ListeningContent() {
   return (
     <main className="w-full flex flex-col justify-center items-center overflow-hidden">
       <div className="w-full relative bg-[#FDF8F5] min-h-[240px] flex items-center overflow-hidden">
-        <div className="absolute left-12 bottom-12 grid grid-cols-4 gap-2">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 rounded-full bg-[rgb(var(--secondary-rgb))] opacity-60"
-            />
-          ))}
-        </div>
         <div className="max-w-7xl mx-auto px-4 w-full text-center">
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-4">
             Listening

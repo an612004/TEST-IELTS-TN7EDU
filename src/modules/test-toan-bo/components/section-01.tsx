@@ -116,14 +116,16 @@ const FullTestSection: React.FC = () => {
     const isWritingCompleted = completedTests.includes(test.w_id);
     return (
       <div className="flex flex-col">
-        <div className="relative mb-2">
-          <Image
-            src={IMAGES.THUMBNAIL}
-            alt={test.name}
-            width={100}
-            height={60}
-            className="rounded-lg w-full object-cover border border-gray-200 px-0 h-20 lg:h-12"
-          />
+        <div className="relative mb-2 flex justify-center items-center">
+          <div className="w-full flex justify-center items-center bg-gradient-to-br from-white to-orange-50 rounded-2xl border-2 border-[#FA812F] shadow-xl p-2" style={{minHeight:'120px'}}>
+            <Image
+              src={IMAGES.THUMBNAIL}
+              alt={test.name}
+              width={320}
+              height={120}
+              className="object-contain h-28 w-full"
+            />
+          </div>
         </div>
         <div className="flex flex-col justify-between h-full">
           <div>

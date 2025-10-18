@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { ROUTES } from "@/utils/routes";
 import ReadingSection from "./components/section-01";
 import SectionFooter from "./components/section-footer";
@@ -31,9 +33,6 @@ export default function ReadingContent() {
             <span className="text-gray-400">•</span>
             <span className="text-gray-900">Reading Test </span>
           </nav>
-        </div>
-        <div className="absolute -right-16 top-1/2 -translate-y-1/2">
-          <div className="w-32 h-32 border-4 border-[rgb(var(--secondary-rgb))] rounded-full opacity-20" />
         </div>
       </div>
       <div className="w-full flex flex-col justify-center items-center">
