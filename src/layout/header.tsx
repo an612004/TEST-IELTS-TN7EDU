@@ -131,7 +131,7 @@ const Header = () => {
               </div>
             </button>
           </div>
-          <Link href={ROUTES.HOME} className="flex items-center gap-2">
+          <Link href={"https://tn-7-edu.vercel.app/"} className="flex items-center gap-2">
             <Image
               src={IMAGES.LOGO}
               alt="Logo"

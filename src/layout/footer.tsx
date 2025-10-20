@@ -171,17 +171,17 @@ const Footer = (props: IMainProps) => {
                 <li className="contact-item">
                   <MapPin size={20} className="text-blue-400 mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-400">
-                    Cơ sở 1: Tầng 8, số 19 Cao Thắng,
+                    Cơ sở : Tầng 8, số 19 Cao Thắng,
 Phường Bàn Cờ, TP. Hồ Chí Minh
                   </span>
                 </li>
-                <li className="contact-item">
+                {/* <li className="contact-item">
                   <MapPin size={20} className="text-blue-400 mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-400">
                     Cơ sở 2: 20 Đường số 43,
 Phường Bình Thuận, TP.HCM
                   </span>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
