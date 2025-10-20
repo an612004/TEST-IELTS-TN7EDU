@@ -119,12 +119,12 @@ const Footer = (props: IMainProps) => {
             {/* Company Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold gradient-text">TN7 EDU CENTER</span>
+                <span className="text-2xl font-bold gradient-text">TN7 EDU</span>
               </div>
               <p className="text-gray-400">
-                Trung tâm đào tạo tiếng anh từ cơ bản đến nâng cao. Dẫn dắt bởi
-                các chuyên gia hàng đầu và đảm bảo đầu ra. Độ tuổi từ tiểu học,
-                trung học, phổ thông, đại học và thạc sĩ.
+                Trở thành đối tác chiến lược hàng đầu tại Việt Nam về giáo dục quốc tế,
+                phát triển nguồn nhân lực và di trú toàn cầu – mang theo khát vọng vươn ra thế giới của người Việt Nam,
+                đồng thời mang kiến ​​thức và cơ hội toàn cầu trở về để nâng tầm thế hệ trẻ Việt Nam.
               </p>
               <div className="flex gap-4">
                 <a
