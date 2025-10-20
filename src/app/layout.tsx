@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Học IELTS cùng chuyên gia đầu ngành. Hỗ trợ toàn diện từ giáo viên bản ngữ, cựu giám khảo và chuyên gia IELTS Việt Nam.",
     images: [
-      "https://res.cloudinary.com/farmcode/image/upload/v1736620702/ielts-viet/website-thumbnail_uqdu6b.png",
+      "https://test-ielts-tn7-edu.vercel.app/_next/image?url=%2Flogo_backup.png&w=2048&q=75",
     ],
   },
 };
